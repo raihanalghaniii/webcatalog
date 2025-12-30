@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
-      --primary: #0f9ba8;
-      --primary-dark: #04707a;
-      --accent: #ffb347;
-      --bg: #050b13;
-      --text: #f5f7fb;
-      --muted: #9aa3b9;
-      --card-bg: rgba(15, 23, 42, 0.9);
+      --primary: #2563eb;          /* biru utama */
+      --primary-dark: #1e40af;
+      --accent: #0ea5e9;           /* biru muda / cyan */
+      --bg: #f4f7fb;               /* background halaman */
+      --text: #0f172a;             /* teks utama (nav, heading) */
+      --muted: #6b7280;            /* teks sekunder */
+      --card-bg: #ffffff;          /* background kartu */
       --border-radius-lg: 22px;
       --transition-slow: 0.8s ease;
       --transition-normal: 0.4s ease;
@@ -31,7 +31,7 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         sans-serif;
-      background: radial-gradient(circle at top, #15213b 0, #050b13 50%, #020308 100%);
+      background: radial-gradient(circle at top, #e0f2ff 0, #ffffff 50%, #e5e7eb 100%);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
@@ -63,11 +63,11 @@
       backdrop-filter: blur(18px);
       background: linear-gradient(
         to bottom,
-        rgba(3, 7, 18, 0.92),
-        rgba(3, 7, 18, 0.3),
+        rgba(255, 255, 255, 0.97),
+        rgba(255, 255, 255, 0.85),
         transparent
       );
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
     }
 
     .nav {
@@ -89,14 +89,14 @@
       width: 34px;
       height: 34px;
       border-radius: 999px;
-      background: radial-gradient(circle at 20% 20%, #fff, #38bdf8 40%, #0f766e);
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.6);
+      background: radial-gradient(circle at 20% 20%, #ffffff, #60a5fa 40%, #1d4ed8);
+      box-shadow: 0 0 18px rgba(59, 130, 246, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 700;
       font-size: 18px;
-      color: #020617;
+      color: #0f172a;
     }
 
     .logo-text {
@@ -108,6 +108,7 @@
       font-weight: 700;
       letter-spacing: 0.05em;
       font-size: 15px;
+      color: var(--text);
     }
 
     .logo-text span:last-child {
@@ -127,7 +128,7 @@
     .nav-links a {
       position: relative;
       padding-bottom: 4px;
-      color: #cbd5f5;
+      color: #4b5563;
       transition: color var(--transition-normal);
     }
 
@@ -139,12 +140,12 @@
       width: 0;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, #22c55e, #22d3ee, #f97316);
+      background: linear-gradient(90deg, #2563eb, #0ea5e9, #38bdf8);
       transition: width 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: #e5e7eb;
+      color: #111827;
     }
 
     .nav-links a:hover::after {
@@ -159,19 +160,19 @@
 
     .btn-outline {
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.8);
       padding: 7px 16px;
       font-size: 13px;
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.6);
+      color: #111827;
+      background: #ffffff;
       transition: all var(--transition-normal);
     }
 
     .btn-outline:hover {
-      border-color: #38bdf8;
-      color: #f9fafb;
+      border-color: #2563eb;
+      color: #1d4ed8;
       transform: translateY(-1px);
-      box-shadow: 0 0 22px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.18);
     }
 
     .btn-primary {
@@ -179,16 +180,16 @@
       padding: 9px 20px;
       font-size: 13px;
       font-weight: 600;
-      color: #020617;
-      background: linear-gradient(135deg, #38bdf8, #22c55e);
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
       border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 6px;
       box-shadow:
-        0 10px 30px rgba(34, 197, 94, 0.4),
-        0 0 40px rgba(56, 189, 248, 0.6);
+        0 10px 25px rgba(37, 99, 235, 0.4),
+        0 0 30px rgba(14, 165, 233, 0.5);
       transition: all 0.45s ease;
     }
 
@@ -201,8 +202,8 @@
     .btn-primary:hover {
       transform: translateY(-2px) translateZ(0) scale(1.02);
       box-shadow:
-        0 18px 45px rgba(34, 197, 94, 0.55),
-        0 0 70px rgba(56, 189, 248, 0.9);
+        0 18px 40px rgba(37, 99, 235, 0.5),
+        0 0 55px rgba(14, 165, 233, 0.8);
     }
 
     .btn-primary:hover span.icon {
@@ -214,8 +215,8 @@
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: #ffffff;
       align-items: center;
       justify-content: center;
       cursor: pointer;
@@ -224,7 +225,7 @@
     .mobile-menu-toggle span {
       width: 16px;
       height: 2px;
-      background: #e5e7eb;
+      background: #111827;
       position: relative;
       border-radius: 999px;
     }
@@ -236,7 +237,7 @@
       width: 16px;
       height: 2px;
       border-radius: 999px;
-      background: #e5e7eb;
+      background: #111827;
       left: 0;
     }
 
@@ -272,9 +273,9 @@
       gap: 6px;
       padding: 4px 10px;
       border-radius: 999px;
-      background: radial-gradient(circle at top left, #22c55e33, transparent 60%);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      color: #a5b4fc;
+      background: radial-gradient(circle at top left, #dbeafe, #eff6ff);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #1d4ed8;
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -287,7 +288,7 @@
       height: 8px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
     }
 
     .hero-title {
@@ -296,14 +297,15 @@
       font-weight: 800;
       margin-bottom: 14px;
       letter-spacing: -0.03em;
+      color: #0f172a;
     }
 
     .hero-title span.gradient {
-      background: linear-gradient(120deg, #22c55e, #22d3ee, #f97316);
+      background: linear-gradient(120deg, #2563eb, #0ea5e9, #22c55e);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
-      text-shadow: 0 0 25px rgba(34, 211, 238, 0.5);
+      text-shadow: 0 0 20px rgba(37, 99, 235, 0.35);
     }
 
     .hero-subtitle {
@@ -325,7 +327,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.14em;
-      color: #9ca3af;
+      color: #6b7280;
       display: flex;
       align-items: center;
       gap: 8px;
@@ -334,9 +336,9 @@
     .meta-badge {
       padding: 2px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.5);
-      background: rgba(15, 23, 42, 0.7);
-      color: #e0f2fe;
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      background: #eff6ff;
+      color: #1d4ed8;
       font-size: 11px;
     }
 
@@ -351,9 +353,9 @@
       border-radius: 999px;
       padding: 9px 16px;
       font-size: 13px;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px dashed rgba(148, 163, 184, 0.8);
-      color: #e5e7eb;
+      background: #ffffff;
+      border: 1px dashed rgba(148, 163, 184, 0.9);
+      color: #111827;
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -364,9 +366,9 @@
     .btn-ghost:hover {
       border-style: solid;
       border-color: #fbbf24;
-      background: radial-gradient(circle at top, rgba(251, 191, 36, 0.12), rgba(15, 23, 42, 1));
+      background: radial-gradient(circle at top, #fef9c3, #ffffff);
       transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(251, 191, 36, 0.35);
+      box-shadow: 0 10px 24px rgba(234, 179, 8, 0.25);
     }
 
     .hero-trust {
@@ -375,7 +377,7 @@
       gap: 18px;
       align-items: center;
       font-size: 12px;
-      color: #9ca3af;
+      color: #6b7280;
     }
 
     .trust-avatars {
@@ -386,11 +388,11 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      border: 2px solid #020617;
+      border: 2px solid #ffffff;
       overflow: hidden;
       margin-left: -8px;
-      box-shadow: 0 0 18px rgba(15, 23, 42, 0.8);
-      background: #1f2937;
+      box-shadow: 0 0 10px rgba(148, 163, 184, 0.5);
+      background: #e5e7eb;
     }
 
     .trust-avatar:first-child {
@@ -400,9 +402,9 @@
     .trust-badge {
       padding: 3px 9px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(96, 165, 250, 0.7);
-      color: #bfdbfe;
+      background: #eff6ff;
+      border: 1px solid rgba(59, 130, 246, 0.9);
+      color: #1d4ed8;
       font-size: 11px;
     }
 
@@ -416,12 +418,11 @@
       position: relative;
       border-radius: 28px;
       padding: 14px;
-      background: radial-gradient(circle at top left, #22c55e22, transparent 60%),
-        radial-gradient(circle at bottom, rgba(15, 118, 110, 0.7), rgba(15, 23, 42, 1));
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at top left, #e0f2fe 0, #ffffff 70%);
+      border: 1px solid rgba(209, 213, 219, 0.9);
       box-shadow:
-        0 30px 80px rgba(15, 23, 42, 0.9),
-        0 0 70px rgba(56, 189, 248, 0.5);
+        0 24px 60px rgba(148, 163, 184, 0.45),
+        0 0 40px rgba(59, 130, 246, 0.35);
       overflow: hidden;
       transform: translateY(8px);
       animation: float 10s ease-in-out infinite alternate;
@@ -443,7 +444,7 @@
       position: relative;
       border-radius: 22px;
       overflow: hidden;
-      background: #020617;
+      background: #ffffff;
     }
 
     .hero-card-main {
@@ -469,8 +470,8 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(15, 23, 42, 0.95) 0%,
-        rgba(15, 23, 42, 0.4) 45%,
+        rgba(15, 23, 42, 0.9) 0%,
+        rgba(15, 23, 42, 0.35) 45%,
         transparent 100%
       );
     }
@@ -495,7 +496,7 @@
 
     .hero-card-text p {
       font-size: 12px;
-      color: #9ca3af;
+      color: #cbd5f5;
     }
 
     .hero-card-tag {
@@ -521,7 +522,7 @@
 
     .hero-card-price span {
       font-size: 10px;
-      color: #9ca3af;
+      color: #e5e7eb;
       text-transform: uppercase;
       letter-spacing: 0.14em;
     }
@@ -538,7 +539,8 @@
       justify-content: space-between;
       align-items: center;
       font-size: 11px;
-      color: #94a3b8;
+      color: #64748b;
+      background: #f9fafb;
     }
 
     .hero-card-badges {
@@ -550,8 +552,9 @@
     .badge-soft {
       padding: 2px 7px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
+      background: #eff6ff;
       border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #1f2937;
     }
 
     .badge-soft span.icon {
@@ -565,11 +568,11 @@
       width: 130px;
       padding: 8px 10px;
       border-radius: 18px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(56, 189, 248, 0.7);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      background: #ffffff;
+      border: 1px solid rgba(59, 130, 246, 0.7);
+      box-shadow: 0 18px 40px rgba(148, 163, 184, 0.8);
       font-size: 11px;
-      color: #e5e7eb;
+      color: #1f2937;
       transform: translate3d(0, 0, 0);
       animation: float2 9s ease-in-out infinite alternate;
     }
@@ -588,21 +591,21 @@
 
     .hero-floating-card span.value {
       font-weight: 600;
-      color: #facc15;
+      color: #2563eb;
     }
 
     .hero-floating-bottom {
       position: absolute;
       bottom: -18px;
       left: 4px;
-      width: 140px;
+      width: 160px;
       padding: 7px 9px;
       border-radius: 16px;
-      background: rgba(15, 23, 42, 0.96);
+      background: #ffffff;
       border: 1px solid rgba(34, 197, 94, 0.8);
-      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+      box-shadow: 0 18px 40px rgba(148, 163, 184, 0.9);
       font-size: 10px;
-      color: #bbf7d0;
+      color: #166534;
       display: flex;
       align-items: center;
       gap: 7px;
@@ -650,6 +653,7 @@
       font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.02em;
+      color: #0f172a;
     }
 
     .section-subtitle {
@@ -681,9 +685,9 @@
       position: relative;
       border-radius: var(--border-radius-lg);
       overflow: hidden;
-      background: radial-gradient(circle at top, #1f2937, #020617 80%);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.85);
+      background: var(--card-bg);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 18px 40px rgba(148, 163, 184, 0.35);
       transform-origin: center;
       transition:
         transform var(--transition-slow),
@@ -694,11 +698,11 @@
 
     .tour-card:hover {
       transform: translateY(-10px) scale(1.02);
-      border-color: rgba(56, 189, 248, 0.9);
+      border-color: rgba(37, 99, 235, 0.9);
       box-shadow:
-        0 28px 70px rgba(15, 23, 42, 1),
-        0 0 45px rgba(56, 189, 248, 0.7);
-      background: radial-gradient(circle at top, #111827, #020617 80%);
+        0 24px 55px rgba(148, 163, 184, 0.6),
+        0 0 35px rgba(59, 130, 246, 0.55);
+      background: #f9fafb;
     }
 
     .tour-image-wrapper {
@@ -724,8 +728,8 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(15, 23, 42, 1) 0%,
-        rgba(15, 23, 42, 0.2) 55%,
+        rgba(15, 23, 42, 0.95) 0%,
+        rgba(15, 23, 42, 0.3) 55%,
         transparent 100%
       );
     }
@@ -739,7 +743,7 @@
       font-size: 11px;
       color: #e5e7eb;
       background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(56, 189, 248, 0.7);
+      border: 1px solid rgba(59, 130, 246, 0.7);
       backdrop-filter: blur(6px);
     }
 
@@ -751,12 +755,13 @@
       border-radius: 999px;
       font-size: 11px;
       color: #bbf7d0;
-      background: rgba(6, 78, 59, 0.9);
-      border: 1px solid rgba(74, 222, 128, 0.7);
+      background: rgba(22, 163, 74, 0.9);
+      border: 1px solid rgba(34, 197, 94, 0.7);
     }
 
     .tour-content {
       padding: 12px 14px 13px;
+      background: #ffffff;
     }
 
     .tour-meta {
@@ -764,7 +769,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 11px;
-      color: #9ca3af;
+      color: #6b7280;
       margin-bottom: 6px;
     }
 
@@ -778,11 +783,12 @@
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 6px;
+      color: #0f172a;
     }
 
     .tour-desc {
       font-size: 12px;
-      color: #9ca3af;
+      color: #6b7280;
       margin-bottom: 10px;
     }
 
@@ -803,16 +809,16 @@
     .tour-price strong {
       display: block;
       font-size: 15px;
-      color: #facc15;
+      color: #f59e0b;
     }
 
     .tour-cta {
       border-radius: 999px;
       padding: 6px 11px;
       font-size: 11px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      color: #e5e7eb;
+      background: #ffffff;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      color: #1f2937;
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -822,8 +828,8 @@
 
     .tour-cta:hover {
       border-color: #22c55e;
-      color: #bbf7d0;
-      box-shadow: 0 10px 26px rgba(34, 197, 94, 0.4);
+      color: #166534;
+      box-shadow: 0 10px 26px rgba(34, 197, 94, 0.35);
       transform: translateY(-1px);
     }
 
@@ -832,12 +838,11 @@
       position: relative;
       border-radius: 24px;
       padding: 14px 14px 30px;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.22), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.35), rgba(15, 23, 42, 0.95) 70%);
-      border: 1px solid rgba(148, 163, 184, 0.65);
+      background: radial-gradient(circle at top left, rgba(191, 219, 254, 0.9), #ffffff 70%);
+      border: 1px solid rgba(209, 213, 219, 0.9);
       box-shadow:
-        0 26px 70px rgba(15, 23, 42, 0.96),
-        0 0 60px rgba(56, 189, 248, 0.7);
+        0 24px 60px rgba(148, 163, 184, 0.5),
+        0 0 40px rgba(59, 130, 246, 0.4);
       overflow: hidden;
     }
 
@@ -846,7 +851,7 @@
       justify-content: space-between;
       align-items: center;
       font-size: 12px;
-      color: #e5e7eb;
+      color: #1f2937;
       margin-bottom: 8px;
     }
 
@@ -887,7 +892,7 @@
       inset: 0;
       background: linear-gradient(
         to top,
-        rgba(15, 23, 42, 0.98) 0%,
+        rgba(15, 23, 42, 0.96) 0%,
         rgba(15, 23, 42, 0.7) 40%,
         rgba(15, 23, 42, 0.25) 70%,
         transparent 100%
@@ -918,8 +923,8 @@
       width: 9px;
       height: 9px;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: #ffffff;
       cursor: pointer;
       transition: all 0.4s ease;
       transform: scale(1);
@@ -928,9 +933,9 @@
     .carousel-dot.active {
       width: 22px;
       border-radius: 999px;
-      background: linear-gradient(90deg, #38bdf8, #22c55e, #f97316);
+      background: linear-gradient(90deg, #2563eb, #0ea5e9, #38bdf8);
       border-color: transparent;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.9);
+      box-shadow: 0 0 18px rgba(59, 130, 246, 0.9);
       transform: scale(1.05);
     }
 
@@ -938,9 +943,9 @@
       border-radius: 999px;
       width: 28px;
       height: 28px;
-      border: 1px solid rgba(148, 163, 184, 0.8);
-      background: rgba(15, 23, 42, 0.9);
-      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: #ffffff;
+      color: #111827;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -950,10 +955,10 @@
     }
 
     .carousel-btn:hover {
-      background: rgba(15, 23, 42, 1);
-      border-color: #38bdf8;
+      background: #eff6ff;
+      border-color: #2563eb;
       transform: translateY(-1px);
-      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.4);
+      box-shadow: 0 10px 24px rgba(59, 130, 246, 0.3);
     }
 
     /* About / Highlight */
@@ -973,9 +978,9 @@
     .highlight-card {
       border-radius: 22px;
       padding: 16px 16px 14px;
-      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.15), rgba(15, 23, 42, 1));
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.95);
+      background: radial-gradient(circle at top, #dbeafe, #ffffff);
+      border: 1px solid rgba(209, 213, 219, 0.9);
+      box-shadow: 0 22px 50px rgba(148, 163, 184, 0.5);
     }
 
     .highlight-stats {
@@ -989,17 +994,17 @@
       flex: 1 1 120px;
       border-radius: 18px;
       padding: 10px 11px;
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.9));
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: #ffffff;
+      border: 1px solid rgba(209, 213, 219, 0.9);
       font-size: 12px;
-      color: #e5e7eb;
+      color: #111827;
     }
 
     .stat-item strong {
       display: block;
       font-size: 18px;
       margin-bottom: 2px;
-      color: #fbbf24;
+      color: #2563eb;
     }
 
     .highlight-gallery {
@@ -1049,11 +1054,11 @@
     .contact-cta {
       border-radius: 22px;
       padding: 18px 18px 16px;
-      background: radial-gradient(circle at top, rgba(34, 197, 94, 0.22), rgba(15, 23, 42, 0.95));
-      border: 1px solid rgba(74, 222, 128, 0.75);
+      background: radial-gradient(circle at top, #dbeafe, #eff6ff);
+      border: 1px solid rgba(191, 219, 254, 0.9);
       box-shadow:
-        0 22px 60px rgba(15, 23, 42, 1),
-        0 0 40px rgba(34, 197, 94, 0.7);
+        0 22px 50px rgba(148, 163, 184, 0.6),
+        0 0 32px rgba(37, 99, 235, 0.5);
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
@@ -1063,13 +1068,13 @@
 
     .contact-cta p {
       font-size: 13px;
-      color: #dcfce7;
+      color: #1f2937;
     }
 
     .contact-cta .btn-primary {
       box-shadow:
-        0 14px 38px rgba(34, 197, 94, 0.7),
-        0 0 40px rgba(56, 189, 248, 0.9);
+        0 14px 32px rgba(37, 99, 235, 0.6),
+        0 0 36px rgba(59, 130, 246, 0.8);
     }
 
     footer {
@@ -1077,6 +1082,9 @@
       font-size: 11px;
       color: #6b7280;
       text-align: center;
+      background: #f9fafb;
+      border-top: 1px solid #e5e7eb;
+      margin-top: auto;
     }
 
     /* Scroll reveal animation */
@@ -1127,7 +1135,7 @@
       }
 
       header {
-        background: rgba(3, 7, 18, 0.96);
+        background: rgba(255, 255, 255, 0.98);
       }
 
       .hero {
@@ -1145,8 +1153,8 @@
       top: 54px;
       left: 0;
       right: 0;
-      background: radial-gradient(circle at top, #020617, #020617ee 60%);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top, #eff6ff, #ffffff 60%);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
       padding: 14px 20px 18px;
       transform-origin: top;
       transform: scaleY(0.8);
@@ -1170,12 +1178,12 @@
       gap: 10px;
       font-size: 14px;
       margin-bottom: 12px;
-      color: #cbd5f5;
+      color: #111827;
     }
 
     .mobile-nav-links a {
       padding-bottom: 4px;
-      border-bottom: 1px solid rgba(31, 41, 55, 0.9);
+      border-bottom: 1px solid rgba(209, 213, 219, 0.9);
     }
 
     .mobile-nav-cta {
@@ -1600,7 +1608,7 @@
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
               <div>
-                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a5b4fc;">Bali</div>
+                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#bfdbfe;">Bali</div>
                 <h3 style="font-size:18px;margin-top:2px;">Sunset & Beach Club Experience</h3>
                 <p style="font-size:12px;color:#e5e7eb;margin-top:4px;">
                   Kunjungi 3 beach club terbaik, hidden beach, dan spot sunset
@@ -1622,7 +1630,7 @@
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
               <div>
-                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a5b4fc;">Labuan Bajo</div>
+                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#bfdbfe;">Labuan Bajo</div>
                 <h3 style="font-size:18px;margin-top:2px;">Sailing Komodo Luxury Voyage</h3>
                 <p style="font-size:12px;color:#e5e7eb;margin-top:4px;">
                   3 hari live-on-board, semua kabin ber-AC, itinerary fleksibel
@@ -1644,7 +1652,7 @@
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
               <div>
-                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a5b4fc;">Raja Ampat</div>
+                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#bfdbfe;">Raja Ampat</div>
                 <h3 style="font-size:18px;margin-top:2px;">Hidden Lagoon & Island Hopping</h3>
                 <p style="font-size:12px;color:#e5e7eb;margin-top:4px;">
                   Paket eksklusif max 10 pax, fokus pada spot-spot tenang dan
@@ -1666,7 +1674,7 @@
             <div class="carousel-overlay"></div>
             <div class="carousel-caption">
               <div>
-                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a5b4fc;">Bromo</div>
+                <div style="font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#bfdbfe;">Bromo</div>
                 <h3 style="font-size:18px;margin-top:2px;">Midnight Bromo Milky Way</h3>
                 <p style="font-size:12px;color:#e5e7eb;margin-top:4px;">
                   Berangkat tengah malam, sunrise di Penanjakan, dan sesi foto
@@ -1707,8 +1715,8 @@
 
     <div class="highlight">
       <div class="highlight-card">
-        <h3 style="font-size:17px;margin-bottom:8px;">Liburan yang dirancang seperti cerita, bukan sekadar itinerary.</h3>
-        <p style="font-size:13px;color:#cbd5e1;margin-bottom:10px;">
+        <h3 style="font-size:17px;margin-bottom:8px;color:#0f172a;">Liburan yang dirancang seperti cerita, bukan sekadar itinerary.</h3>
+        <p style="font-size:13px;color:#4b5563;margin-bottom:10px;">
           Tim travel designer kami akan membantu merangkai rute, tempo,
           pengalaman, hingga detail kecil seperti lokasi makan favorit dan
           hidden spot untuk foto – semuanya disesuaikan dengan gaya liburan
